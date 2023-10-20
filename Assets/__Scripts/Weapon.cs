@@ -15,8 +15,7 @@ public enum WeaponType
     phaser, // [NI] Shots that move in waves
     missile, // [NI] Homing missiles
     laser, // [NI] Damage over time
-    shield, // Raise shieldLevel
-    test
+    shield // Raise shieldLevel
 }
 
 /// <summary>
@@ -135,6 +134,11 @@ public class Weapon : MonoBehaviour {
                 break;
 
             case WeaponType.laser:
+                p = MakeProjectile();
+                p.rigid.velocity = vel;
+                break;
+            
+            case WeaponType.phaser:
                 p = MakeProjectile();
                 p.rigid.velocity = vel;
                 break;
